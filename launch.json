@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "GotchiToken",
+    "name": "Gotchi Finance",
+    "symbol": "GOTCHI",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "3500000000000000000000",
+    "remainderTo": "0xff3e8d9ba776662ca6ed1420ee366afb436d2684"
+  },
+  "notes": "GotchiToken (src/GotchiToken.sol) is a plain fixed-supply ERC-20 on the vendored OpenZeppelin Contracts v5.0.2 base, name Gotchi Finance, symbol GOTCHI, 18 decimals. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 GOTCHI (1000000000000000000000000000 minor units, the constant INITIAL_SUPPLY) once to msg.sender, which at launch is the factory. There is no owner, mint, burn, pause, blacklist, upgrade or rescue function, no transfer fee or exemption, and no external call; transfers deliver exactly the amount sent, so the swarm share, the single-sided seed through the PoolManager and trader swaps each move exactly what they say. The launch deploys no application contracts and makes no initialization calls. The pool pairs GOTCHI with IMD (0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7) at the launch policy's 1.25% fee with tick spacing 60; the deployer derives the opening price from economics.initialMarketCapWei (3,500 IMD for the whole supply), the supply and the token's address, so pool.initialPrice is provenance only. Economics are the requester's verbatim: 80% of the supply seeds the pool and the remainder of the requester's share goes to 0xff3e8d9ba776662ca6ed1420ee366afb436d2684; the swarm's share is taken by the factory and is not written here."
+}
